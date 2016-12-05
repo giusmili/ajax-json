@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Es6</title>
+	<style type="text/css">
+	body{
+			font: 16px sans-serif;
+		}
+		h1,h2,h3,p{
+			text-align: center;
+			font-weight: 100;
+		}
+		p{
+			width: 600px;
+			margin:0 auto 10px;
+			text-align: justify;
+		}
+		p>em{
+			color: rgba(255,0,0,0.8);
+		}
+	</style>
+</head>
+<body>
+	<h1>Es6 la constante</h1>
+	<ul></ul>
+	<p></p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis nam, nemo doloremque recusandae nisi voluptas vitae earum necessitatibus? Unde in quam distinctio nobis, dolore officia laudantium eveniet cumque veritatis recusandae?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae laboriosam reiciendis incidunt expedita praesentium dolores officia recusandae quaerat totam omnis alias provident consequuntur velit, minus aperiam voluptates voluptatum molestiae dolor. Corporis rem temporibus est eius reprehenderit, magni ratione expedita doloribus, autem quos, delectus accusantium.</p>
+	<p></p>
+	
+	<script>
+	
+	let ex=document.getElementsByTagName('p')[1];//stocker un élément du dom
+	console.log(ex.childNodes[0].nodeValue);//extraire la valeur dans la console
+	let capture=ex.childNodes[0].nodeValue;//stocker la chaîne
+	let lastNode=document.getElementsByTagName('p')[2];//décalarer la cible
+	lastNode.innerHTML=capture+"<em>Cela appartient au noeud : "+ex+"<em>";//afficher la chaîne dans la cible
+	console.log("Vous avez :"+capture.length+" caractères");
+
+		let target=document.querySelector('p');
+		
+
+
+		const PI = 3.1415;//ok sur la console
+				
+		console.log(PI*2);
+		target.textContent="Votre résultat est : "+PI;
+		//la nouvelle méthode
+		
+		let classe = {
+			  nom: "CM1",
+			  eleves: [],
+			  printFriends() {
+			    this.eleves.forEach(eleve =>
+			    	console.log(eleve + " est dans la classe " + this.nom));
+
+			  }
+
+			};
+			
+
+
+			//avant avec forEach
+			
+			let warning=document.getElementsByTagName('ul')[0];
+			var mytab=['HTML','CSS','JS'];
+			 mytab.forEach(function(mytab){
+		  		return console.log(mytab);
+		  		//return document.querySelector('.list').innerHTML+="<li>"+mytab+"</li>";
+				});
+
+			 //nouvelle version
+		 data=['Tablette','Mobile','Desktop'];
+			for(let item of data){
+				console.log(item);
+				warning.innerHTML+="<li>"+item+"</li>";
+			}
+			//avec une collection d'objet dans le tabelau
+			
+			data=[{a:'Tablette'},{a:'Mobile'},{a:'Desktop'}];
+			
+			
+			
+			
+			for(let item of data){
+			
+				//warning.innerHTML=data[0].a;
+				console.log(item);
+			}
+		
+
+
+			//par la while
+
+			let i=0;
+				while(i<10){
+					i++;
+				}
+				console.log(i);
+
+			
+			for(var key in data)
+					{
+					  var value = data[key];
+					
+
+					  console.log(value);
+
+					 }
+
+
+			
+
+	</script>
+</body>
+</html>

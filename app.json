@@ -1,0 +1,42 @@
+
+		{
+		 
+			"personnes":[ 
+				      	{
+						  "nom": "Pierre Durand",
+						  "age": "27",
+						  "ville": "Paris",
+						  "domaine": "HTML5, CSS3, JavaScript"
+						},
+						{
+						  "nom": "Antoine",
+						  "age": "38",
+						  "ville": "Paris",
+						  "domaine": "HTML5"
+						},
+						{
+						  "nom": "Bruce",
+						  "age": "40",
+						  "ville": "NY",
+						  "domaine": "Java"
+						}
+				   	],
+			
+			"cours":[
+					{
+						"titre":"getJson &amp; javascript"
+					},
+					{
+						"paragraphe" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ab, esse tenetur aspernatur laudantium, velit unde? Rem, esse quia. Quas voluptatem repudiandae, consectetur in doloribus animi dolore eveniet iste velit!"
+					},
+					{
+						"soustitre" : "Les étudiants"
+					}
+				
+				],
+			"image":[
+					{
+						"img":"\"images/p4.jpg\""
+					}
+				]
+		}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">	
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+	<title>import js</title>
+	<style type="text/css">
+	body{
+			font: 16px 'Open Sans',sans-serif;
+		}
+		h1,h2,h3,p{
+			text-align: center;
+			font-weight: 100;
+		}
+		p{
+			width: 600px;
+			margin:0 auto 10px;
+			text-align: justify;
+			line-height: 25px;
+			background: #fafafa;
+			padding:5px;
+			border-left: solid 4px #3293D3;
+		}
+		*{
+			box-sizing: border-box;
+		}
+		p>em{
+			color: rgba(255,0,0,0.8);
+		}
+		ul{
+			width: 400px;
+			margin:0 auto;
+			padding: 0;
+			background: #fafafa;
+			line-height:25px;
+		}
+		li{
+			list-style:none;
+			padding:5px;;
+			
+		}
+		
+		li:nth-child(2n+1){
+			background: rgb(50, 147, 211);
+			color:#fff;
+		}
+		.pictures{
+			width:400px;
+			margin:10px auto;
+			background: #fff;
+			padding:10px;
+			border: solid 1px #ccc;
+		}
+		.pictures>img{
+			display:block;
+			max-width:100%;
+		}
+		footer{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Javascript</h1>
+	<p></p>
+	<h3></h3>
+	<ul id="affichage">
+		
+	</ul>
+	<div class="pictures"></div>
+	
+
+	<script src="jquery.js"></script>
+	<script>
+	  $(function() {
+	
+	        $.getJSON('app.json', function(data) {
+	        	console.log(data);
+	        	console.log(data.cours[0].titre);
+	        	$('h1').html(data.cours[0].titre);
+	        	$('p').text(data.cours[1].paragraphe);
+	        	$('h3').text(data.cours[2].soustitre);
+				$('.pictures').append("<img src="+data.image[0].img+">");
+				$('<footer>').appendTo("body");
+				$('footer').html('&copy; - Giusmili - 2016');
+
+	 
+			  for(i=0; i<data.personnes.length; i++){
+				console.log(data.personnes[i].nom+' '+data.personnes[i].age);
+
+				var $liste = $('ul');
+				$liste.append($("<li>",{html: "Nom : "+data.personnes[i].nom}));
+				$liste.append($("<li>",{html: "Age : "+data.personnes[i].age}));
+				$liste.append($("<li>",{html: "Ville : "+data.personnes[i].ville}));
+				$liste.append($("<li>",{html: "Domaine :"+data.personnes[i].domaine}));
+				
+				
+				
+			}
+	      });
+	    
+	  });
+	</script>
+
+	    
+</body>
+</html>
